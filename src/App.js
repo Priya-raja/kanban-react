@@ -1,8 +1,8 @@
 import React from "react";
-import Nav from "./components/Nav";
+import Nav from "./components/nav";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Dashboards from "./pages/Dashboards";
-import Board from "./pages/Board";
+import Dashboards from "./pages/dashboards";
+import Board from "./pages/board";
 
 const App = () => {
   

@@ -1,4 +1,4 @@
-function Panel(props) {
+function Panel({id,className, children}) {
     const drop = (e) => {
         e.preventDefault();
         const palette_id = e.dataTransfer.getData('palette_id')
@@ -11,11 +11,11 @@ function Panel(props) {
     }
     return (
         <div
-            id={props.id}
+            id={id}
             onDrop={drop}
             onDragOver={dragOver}
-            className={props.className}>
-            {props.children}
+            className={className}>
+            {children}
 
         </div>
     )

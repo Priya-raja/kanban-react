@@ -12,7 +12,7 @@ const Nav = () => {
 
           <div className="controls-container">
             <div className="icon" onClick={() => navigate("/")}>  Dashboard </div>
-            {/* <div className="icon" onClick={() => navigate("/board")}> Board </div> */}
+            <div className="icon" onClick={() => navigate("/board")}> Board </div>
             
           </div>
     </nav>
