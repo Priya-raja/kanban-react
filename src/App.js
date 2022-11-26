@@ -5,6 +5,7 @@ import Dashboards from "./pages/Dashboards";
 import Board from "./pages/Board";
 
 const App = () => {
+  
   return (
     <div className="app">
       <BrowserRouter>

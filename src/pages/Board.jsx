@@ -1,9 +1,16 @@
 import React from 'react'
 
+import {useLocation} from 'react-router-dom';
+
 const Board = () => {
+
+  const {state} = useLocation();
   return (
     
-    <div>Board</div>
+    <div>
+      { state != null ? <div>{state.newTitle}</div> : ""} 
+    
+    </div>
   )
 }
 

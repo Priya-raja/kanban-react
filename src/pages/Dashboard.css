@@ -1,0 +1,46 @@
+
+  .input-group{
+    display: flex;
+    flex-direction: column;
+  }
+  .input-group input{
+    padding:15px;
+    border-radius: 30px;
+  }
+  
+  .btn{
+    background-color: #888CF0;
+    color:#000000;
+    margin-top: 20px;
+    border-radius: 40px;
+    box-shadow: none;
+    border:none;
+    padding:15px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .list-container{
+    margin-top:40px;
+  }
+  .list-item{
+    display:flex;
+    align-items: center;
+    text-align:center;
+    border-bottom: 1px solid;
+    border-bottom-color: gray;
+    padding:0px 4px;
+    border-radius: 40px;
+    margin-top:8px;
+    cursor:move;
+    
+  }
+ 
+  .icon{
+   margin:10px;
+    font-size: 20px;
+  }
+  
+  h3{
+    font-size: 30px;
+  }
