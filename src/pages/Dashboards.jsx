@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars,  } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import "./dashboard.css";
+import useLocalStorage from "../localStorageFile/useLocalStorage";
 
 const Dashboards = () => {
   let navigate = useNavigate();
-  const [title, setTitle] = useState(["DevOps", "Development"]);
+  const [title, setTitle] = useLocalStorage('lists',["DevOps", "Development"]);
   const [newTitle, setNewTitle] = useState("");
 
   const navigateToBoard = () => {

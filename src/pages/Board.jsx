@@ -3,12 +3,19 @@ import {useLocation} from 'react-router-dom';
 import './board.css'
 import Panel from '../components/panel'
 import CustomInputPanel from '../components/customInput'
+import useLocalStorage from '../localStorageFile/useLocalStorage';
 
-const Board = () => {
+const Board = () => {  
+const [boards, setBoards] = useLocalStorage('boards', [])
+const {state} = useLocation();
+
+
+// async function fetchData() {
+//   const boards = await fetchBoardList();
+//   setBoards(boards);
+// }
   
-const [boards, setBoards] = useState([])
-  const {state} = useLocation();
-  const addBoardHandler = (name) => {
+  const addBoardsHandler = (name) => {
     const tempBoardsList = [...boards];
 
     let boardObj = {id: boards.length === 0 ? 1 : boards[boards.length - 1].id + 1,
@@ -19,7 +26,7 @@ const [boards, setBoards] = useState([])
     setBoards(tempBoardsList);
     console.log(boards)
   };
-
+  
   return (
     
     <div className='board-container'>
@@ -42,7 +49,7 @@ const [boards, setBoards] = useState([])
               placeholder="Enter Panel Name"
               text="Add Panel"
               buttonText="Add Panel"
-              onSubmit={addBoardHandler}
+              onSubmit={addBoardsHandler}
             />
           </div>
         </div>
