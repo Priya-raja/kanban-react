@@ -3,12 +3,12 @@ import { IBoard } from "../Pages/BoardVariables";
 export const ApiMockResponse: IBoard[] = [
   {
     id: 1651319512266.7095,
-    title: "Discover",
+    title: "New",
     cards: [
       {
         id: 1651319552926.0933,
         title: "Task1",
-        labels: [{ color: "#cf61a1", text: "Urgent" }],
+        labels: [{ color: "#cf61a1", text: "High Priority" }],
         date: "2022-05-05",
         tasks: [
           { id: 1651319625559.8025, completed: true, text: "Task1_subtask1" },
@@ -28,7 +28,7 @@ export const ApiMockResponse: IBoard[] = [
   },
   {
     id: 1651319523126.113,
-    title: "Doing",
+    title: "In Progress",
     cards: [
       {
         id: 1651319672685.5078,
@@ -43,7 +43,7 @@ export const ApiMockResponse: IBoard[] = [
   },
   {
     id: 1651319530017.122,
-    title: "In-Review",
+    title: "Completed",
     cards: [
       {
         id: 1651319677070.0732,

@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { FiMoreHorizontal } from "react-icons/fi";
+import  { useState } from "react";
 
+import { FiMoreHorizontal } from "react-icons/fi";
 import Card from "../Card/Card";
 import Dropdown from "../Dropdown/Dropdown";
 import CustomInputPanel from "../CustomInput";
-import { IBoard, ICard } from "../../Pages/BoardVariables";
 
 import "./PanelBoard.css";
+import { IBoard, ICard } from "../../Pages/BoardVariables";
 
 interface BoardProps {
   board: IBoard;
@@ -17,6 +17,7 @@ interface BoardProps {
   onDragEnter: (boardId: number, cardId: number) => void;
   updateCard: (boardId: number, cardId: number, card: ICard) => void;
 }
+
 function PanelBoard(props: BoardProps) {
   const {
     board,
@@ -38,9 +39,12 @@ function PanelBoard(props: BoardProps) {
           </p>
           <div
             className="board-header-title-more"
-            onClick={() => setShowDropdown(true)}
+            onClick={(event) => {
+              event.stopPropagation();
+              setShowDropdown(true);
+            }}
           >
-            <FiMoreHorizontal/>
+            <FiMoreHorizontal />
             {showDropdown && (
               <Dropdown
                 class="board-dropdown"

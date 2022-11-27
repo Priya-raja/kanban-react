@@ -10,15 +10,19 @@ import useLocalStorage from '../localStorageFile/useLocalStorage';
 
 
 const Board = () => {  
-const [boards, setBoards] = useState<IBoard[]>([])
-useLocalStorage('boards', [ApiMockResponse])
+const [boards, setBoards] = useLocalStorage('boards',ApiMockResponse)
+
+
 const [targetCard, setTargetCard] = useState({
   boardId: 1,
   cardId: 0,
 });
-// const {state} = useLocation();
 
 
+// async function fetchData() {
+//   const boards: IBoard[] = await fetchBoardList();
+//   setBoards(boards);
+// }
   const addBoardsHandler = (name: string) => {
     const tempBoardsList = [...boards];
     tempBoardsList.push({
@@ -134,6 +138,8 @@ const [targetCard, setTargetCard] = useState({
       cardId: cardId,
     });
   };
+  
+
   return (
     
    <>
