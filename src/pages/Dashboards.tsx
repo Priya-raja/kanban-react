@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars,  } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +7,7 @@ import useLocalStorage from "../localStorageFile/useLocalStorage";
 
 const Dashboards = () => {
   let navigate = useNavigate();
-  const [title, setTitle] = useLocalStorage('lists',["DevOps", "Development"]);
+  const [title, setTitle] = useLocalStorage('lists',[]);
   const [newTitle, setNewTitle] = useState("");
 
   const navigateToBoard = () => {
@@ -15,21 +15,27 @@ const Dashboards = () => {
     
   };
   //handle name change
-  const handleNameChange = (e) => {
+  const handleNameChange = (e: any) => {
     setNewTitle(e.target.value);
   };
 
 
   //handle new item addition
   const handleAddItem = () => {
-    const _titleAddition = [...title];
-    _titleAddition.push(newTitle);
-    setTitle(_titleAddition);
-     
-  };
 
+   
+      const titleAddition: any = [...title];
+      titleAddition.push(newTitle);
+      setTitle(titleAddition);
+      setNewTitle('')
+    
+   
+  };
+  let items = Object.values(title);
   return (
+    
     <div className="dashboard">
+      
       <h2>My Project</h2>
       <div className="input-group">
         <input
@@ -48,7 +54,7 @@ const Dashboards = () => {
 
       {/** List container */}
       <div className="list-container">
-        {title.map((item, index) => (
+        {items.map((item, index) => (
           <div key={index} className="list-item">
             <FontAwesomeIcon className="icon" icon={faBars} />
             <h3>{item}</h3>

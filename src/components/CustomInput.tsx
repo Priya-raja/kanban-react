@@ -1,7 +1,18 @@
 import React, { useState } from "react";
-import "./customInput.css";
 
-function CustomInputPanel(props) {
+import {AiOutlineClose} from 'react-icons/ai';
+
+import "./CustomInput.css";
+interface CustomInputProps {
+  text: string;
+  onSubmit: (value: string) => void;
+  displayClass?: string;
+  editClass?: string;
+  placeholder?: string;
+  defaultValue?: string;
+  buttonText?: string;
+}
+function CustomInput(props: CustomInputProps) {
   const {
     text,
     onSubmit,
@@ -14,7 +25,7 @@ function CustomInputPanel(props) {
   const [isCustomInput, setIsCustomInput] = useState(false);
   const [inputText, setInputText] = useState(defaultValue || "");
 
-  const submission = (e) => {
+  const submission = (e: any) => {
     e.preventDefault();
     if (inputText && onSubmit) {
       setInputText("");
@@ -38,10 +49,8 @@ function CustomInputPanel(props) {
             autoFocus
           />
           <div className="custom-input-edit-footer">
-            <button type="submit"
-            onClick={() => setIsCustomInput(false)} className="closeIcon" >
-            {buttonText || "Add"}
-            </button>
+            <button type="submit">{buttonText || "Add"}</button>
+            <AiOutlineClose onClick={() => setIsCustomInput(false)} className="closeIcon" />
           </div>
         </form>
       ) : (
@@ -56,4 +65,4 @@ function CustomInputPanel(props) {
   );
 }
 
-export default CustomInputPanel;
+export default CustomInput;
