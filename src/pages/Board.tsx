@@ -12,7 +12,7 @@ import useLocalStorage from '../localStorageFile/useLocalStorage';
 const Board = () => {  
 const [boards, setBoards] = useLocalStorage('boards',ApiMockResponse)
 
-
+const {state} = useLocation()
 const [targetCard, setTargetCard] = useState({
   boardId: 1,
   cardId: 0,
@@ -144,15 +144,15 @@ const [targetCard, setTargetCard] = useState({
     
    <>
       
-      <div className="app">
+      <div className="app-panel">
       <div className="app-nav">
-        {/* { state != null ? 
+        { state != null ? 
       <div className="project-title">
-        <h1>{state.newTitle}</h1>
+        <h1 className="project-title">{state.newTitle}</h1>
         </div>
-       : <h1>My Project</h1>
+       : <h1 className="project-title">My Project</h1>
        } 
-        */}
+       
       </div>
       <div className="app-boards-container">
         <div className="app-boards">
