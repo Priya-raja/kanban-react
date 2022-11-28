@@ -1,23 +1,46 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { MdLightMode } from "react-icons/md";
-import ReactSwitch from "react-switch";
 
+import { ThemeContext } from "../ThemeContext";
 const Nav = () => {
   let navigate = useNavigate();
+
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   return (
-    <nav>
+    <nav style={{ background: theme.foreground, color: theme.background }}>
       <div className="logo-container">Kanban</div>
 
-      {/* <MdLightMode /> Theme */}
+      {/*  Theme */}
 
       <div className="controls-container">
-        <div className="icon" onClick={() => navigate("/")}>
-          
+        <div className="icon">
+          <button
+            style={{
+              borderRadius: "30px",
+              background: theme.background,
+              color: theme.foreground,
+            }}
+            onClick={toggleTheme}
+          >
+            <MdLightMode />
+            Theme
+          </button>
+        </div>
+
+        <div
+          className="icon"
+          style={{ background: theme.background, color: theme.foreground }}
+          onClick={() => navigate("/")}
+        >
           Dashboard
         </div>
-        <div className="icon" onClick={() => navigate("/board")}>
-        
+        <div
+          className="icon"
+          style={{ background: theme.background, color: theme.foreground }}
+          onClick={() => navigate("/board")}
+        >
           Board
         </div>
       </div>

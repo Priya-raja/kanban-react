@@ -12,10 +12,12 @@ body{
 }
 .project-title {
 color:rgb(3, 3, 3);
+margin:0;
+padding: 0;
 }
 
 .app-nav {
-  padding: 5px 0px;
+  padding: 0px 0px;
   box-shadow: 0 1px 20px rgba(56, 40, 40, 0.05);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   position: sticky;

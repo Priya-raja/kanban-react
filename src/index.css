@@ -32,9 +32,11 @@ nav {
     width: 20px;
   }
   
-  nav .icon {
-    color: rgb(255,255,255);
-  }
+ nav .icon{
+  border-radius: 50px;
+  width: 200px;
+  margin-bottom: 5px;
+ }
 /* 
 Dashboard */
 
@@ -60,7 +62,7 @@ Dashboard */
       sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    margin: 0;
+    /* margin: 0; */
   }
   
   p {
