@@ -32,7 +32,7 @@ const Dashboards = () => {
       className="dashboard"
       style={{ background: theme.background, color: theme.foreground }}
     >
-      <h2>My Project</h2>
+      <h2 style={{marginBottom: "20px", alignContent: "center"}}>My Project</h2>
       <div className="input-group">
         <input
           type="text"
